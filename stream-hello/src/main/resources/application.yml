@@ -1,0 +1,20 @@
+server:
+  port: 8001
+  
+spring:
+  application:
+    name: stream-hello
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: raw-sensor-data
+          content-type: application/json
+          group: serviceA
+        output:
+          destination: raw-sensor-data
+  rabbitmq:
+    host: localhost
+    password: rabbit
+    port: 5672
+    username: rabbit
